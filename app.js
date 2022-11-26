@@ -1,23 +1,27 @@
-const express = require ('express');
-const chalk = require ('chalk');
-const debug = require('debug')('app');
-const morgan = require ('morgan');
-const path = require ('path');
-const PORT = process.env.PORT || 3000
+const express = require("express");
+const chalk = require("chalk");
+const debug = require("debug")("app");
+const morgan = require("morgan");
+const path = require("path");
+const PORT = process.env.PORT || 3000;
+
 
 const app = express();
+const sessionRouter = require('./src/routes/sessionRouter')
 
-app.use(morgan('tiny'));
-app.use(express.static(path.join(__dirname, '/public/')));
+app.use(morgan("tiny"));
+app.use(express.static(path.join(__dirname, "/public/")));
 
-app.set('views', './src/views/');
-app.set('view engine', 'ejs')
+app.set("views", "./src/views/");
+app.set("view engine", "ejs");
 
-app.get('/', (req, res)=> {
-   
-    res.render('index', {title: 'Welcome', data: [1,2,3]})
+app.use("/sessions", sessionRouter);
+
+
+app.get("/", (req, res) => {
+  res.render("index", {});
 });
 
-app.listen(PORT, ()=> {
-    debug(`listening on port ${chalk.green(PORT)}`);
+app.listen(PORT, () => {
+  debug(`listening on port ${chalk.green(PORT)}`);
 });
