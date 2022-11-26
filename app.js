@@ -10,8 +10,12 @@ const app = express();
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
 
+app.set('views', './src/views/');
+app.set('view engine', 'ejs')
+
 app.get('/', (req, res)=> {
-    res.send('Hi from server')
+   
+    res.render('index', {title: 'Welcome', data: [1,2,3]})
 });
 
 app.listen(PORT, ()=> {
