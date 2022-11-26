@@ -43,7 +43,7 @@
                       <a class="nav-link" href="our-story.html">Our story<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="sessions">Sessions</a>
+                      <a class="nav-link" href="/sessions">Sessions</a>
                     </li>
 
                     <li class="nav-item">
@@ -75,7 +75,7 @@
                     <a class="nav-link" href="our-story.html">Our story<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="sessions">Sessions</a>
+                    <a class="nav-link" href="/sessions">Sessions</a>
                   </li>
 
                   <li class="nav-item">
@@ -109,7 +109,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 adj_text">
               <h3><%=el.title%></h3>
               <p><%=el.description.slice(0,300)%>...</p>
-              <a href="/sessions/<%=index%>" class="btn-oval">Learn More</a>
+              <a href="/sessions/<%=el._id%>" class="btn-oval">Learn More</a>
             </div>
             <% }) %>
           </div>
@@ -125,7 +125,7 @@
             <div class="links col-md-5 col-md-5 col-xs-10">
               <ul class="quick-links col-md-4 col-xs-6">
                 <li><a href="our-story.html">Our Story</a></li>
-                <li><a href="sessions">Sessions</a></li>
+                <li><a href="/sessions">Sessions</a></li>
                 <li><a href="robotics.html">Robotics</a></li>
                 <li><a href="media.html">Media</a></li>
                 <li><a href="#">Support</a></li>
